@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :ensure_correct_user, only: [:update]
+  before_action :authenticate_user!
 
   def show
     @user = User.find(params[:id])
@@ -8,13 +9,18 @@ class UsersController < ApplicationController
   end
 
  def index
-    @user = User.find(params[:id])
+    @user = current_user
     @users = User.all
     @book = Book.new
  end
 
   def edit
     @user = User.find(params[:id])
+  if current_user == @user
+     render :edit
+  else
+     redirect_to user_path(current_user)
+  end
   end
 
   def update

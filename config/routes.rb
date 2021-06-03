@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get 'home/about' => 'homes#about'
   get '/homes' => 'users#show'
   get 'users/:id/profile', to: 'users#show', as: 'user_profile'
+
 end
