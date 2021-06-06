@@ -1,2 +1,0 @@
-class Bookcomment < ApplicationRecord
-end

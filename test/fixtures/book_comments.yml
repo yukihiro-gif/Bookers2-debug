@@ -3,9 +3,9 @@
 one:
   user_id: 1
   book_id: 1
-  book_comment: MyText
+  book_comments: MyText
 
 two:
   user_id: 1
   book_id: 1
-  book_comment: MyText
+  book_comments: MyText
