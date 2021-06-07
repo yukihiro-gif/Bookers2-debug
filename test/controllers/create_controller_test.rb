@@ -6,4 +6,14 @@ class CreateControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get followings" do
+    get create_followings_url
+    assert_response :success
+  end
+
+  test "should get followers" do
+    get create_followers_url
+    assert_response :success
+  end
+
 end

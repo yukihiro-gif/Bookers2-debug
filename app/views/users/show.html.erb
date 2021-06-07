@@ -8,7 +8,29 @@
     </div>
     <div class='col-md-8 offset-md-1'>
       <h2>Books</h2>
-      <%= render 'users/index',users: @books, user: @user%>
+    <table>
+     <thead>
+      <tr>
+       <th>image</th>
+       <th>title</th>
+       <th colspan="3"></th>
+      </tr>
+     </thead>
+     <tbody>
+       <% @user.books.each do |book|%>
+       <th class="data1">
+         <%= attachment_image_tag(@user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %></br>
+         <%= @user.name %>
+       </th>
+       <th class="data2">
+         <%= book.title %>
+       </th>
+       <th class="data">
+         <%= book.body %>
+       </th>
+       <% end %>
+     </tbody>
+    </table>
     </div>
   </div>
 </div>
