@@ -6,12 +6,12 @@ before_action :authenticate_user!
     @books = Book.new
     @user = current_user
     @book_comment = BookComment.new
+    pp @book_comments = @book.book_comments
   end
 
   def index
     @books = Book.all
     @book = Book.new
-
   end
 
   def create
