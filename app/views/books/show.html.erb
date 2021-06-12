@@ -29,7 +29,7 @@
           </tr>
         </table>
         <table id="comment-btn">
-          <%= render 'book_comments/show', book: @book, user: @user, book_comments: @book_comments %>
+          <%= render 'book_comments/show', book: @book %>
         </table>
         <div class="new_comment">
          <%= form_with(model:[@book, @book_comment] ) do |f| %>

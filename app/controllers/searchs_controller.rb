@@ -2,11 +2,12 @@ class SearchsController < ApplicationController
   def serch
     @range = params[:range]
     @word = params[:word]
+    @method = params[:method]
 
     if  @range == "user"
-     @users = User.search(params[:method],params[:word])
+     @users = User.search(@method,@word)
     else
-     @books = Book.search(params[:method],params[:word])
+     @books = Book.search(@method,@word)
     end
   end
 end

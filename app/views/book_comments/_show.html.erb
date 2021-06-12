@@ -1,12 +1,12 @@
-<% book_comments.each do |book_comment| %>
+<% book.book_comments.each do |book_comment| %>
 <tr>
   <td>
-    <%= attachment_image_tag(@user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></br>
+    <%= attachment_image_tag(book.user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></br>
     <%= book_comment.user.name %>
   </td>
   <td><%= book_comment.book_comments %></td>
       <% if book_comment.user == current_user %>
-  <td><%= button_to 'Destroy', book_book_comment_path(book_comment.book,book_comment), method: :delete, local:true %></td>
+  <td><%= button_to 'Destroy', book_book_comment_path(book_comment.book,book_comment), method: :delete, remote:true %></td>
       <% end %>
 </tr>
  <% end %>
